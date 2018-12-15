@@ -193,7 +193,7 @@ def make_move(a, b, board):
     if (a[0]!=b[0] and (a[0] - b[0]) % 2 == 0) or (a[1]!=b[1] and (a[1] - b[1]) % 2 == 0): # we made a jump...
         board[(a[0]+b[0])/2][(a[1]+b[1])/2] = board[b[0]][b[1]] # delete the jumped piece
 
-############### CORE FUNCTIONS #########
+############ CORE FUNCTIONS #########
 # will evaluate board for a player
 def evaluate(game, player):
 	''' this function just adds up the pieces on board (100 = piece, 175 = king) and returns the difference '''
@@ -222,7 +222,7 @@ def evaluate(game, player):
 		if player != 'black': return white-black
 		else: return black-white
 
-	''' a king on an edge could become trapped, thus deduce some points '''
+	''' a king on an edge could become trapped '''
 	def edge_king(game, player):
 		black, white = 0, 0 # keep track of score
 		for m in range(8):
